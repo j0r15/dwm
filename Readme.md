@@ -26,5 +26,5 @@
 		- libxcb
 		- xlib-libxcb
 		- xcb-res
-- [https://dwm.suckless.org/patches/vanitygaps/](https://dwm.suckless.org/patches/vanitygaps/dwm-vanitygaps-20190508-6.2.diff)
+- [https://dwm.suckless.org/patches/vanitygaps/](https://dwm.suckless.org/patches/vanitygaps/dwm-vanitygaps-20200610-f09418b.diff)
 - [https://dwm.suckless.org/patches/xresources/](https://dwm.suckless.org/patches/xresources/dwm-xresources-6.2.diff)
