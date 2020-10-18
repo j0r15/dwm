@@ -1,6 +1,14 @@
 # DWM in Manjaro Minimal
 
+## Font pkg
+
+ttf-roboto-mono
+
+
 # Patches:
+
+
+
 
 ## DONE:
 - [https://dwm.suckless.org/patches/vanitygaps/](https://dwm.suckless.org/patches/vanitygaps/dwm-vanitygaps-20190508-6.2.diff)
