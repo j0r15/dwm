@@ -5,7 +5,13 @@
 ## DONE:
 - [https://dwm.suckless.org/patches/vanitygaps/](https://dwm.suckless.org/patches/vanitygaps/dwm-vanitygaps-20190508-6.2.diff)
 
+
+## NEXT:
+- icons
+
+
 ## TODO:
+- [https://dwm.suckless.org/patches/pertag/](https://dwm.suckless.org/patches/pertag/dwm-pertag-20200914-61bb8b2.diff)
 
 - [https://dwm.suckless.org/patches/alwaysfullscreen/](https://dwm.suckless.org/patches/actualfullscreen/dwm-actualfullscreen-20191112-cb3f58a.diff)
 - [https://dwm.suckless.org/patches/barpadding/](https://dwm.suckless.org/patches/barpadding/dwm-barpadding-20200720-bb2e722.diff)
@@ -18,9 +24,6 @@
 - [https://dwm.suckless.org/patches/namedscratchpads/](https://dwm.suckless.org/patches/namedscratchpads/dwm-namedscratchpads-6.2.diff)
 - [https://dwm.suckless.org/patches/center/](https://dwm.suckless.org/patches/center/dwm-center-6.2.diff)
 - [https://dwm.suckless.org/patches/nodmenu/](https://dwm.suckless.org/patches/nodmenu/dwm-nodmenu-6.2.diff)
-- [https://dwm.suckless.org/patches/pango/](https://dwm.suckless.org/patches/pango/dwm-pango-20200428-f09418b.diff)
-	- <https://aur.archlinux.org/packages/ttf-font-icons/>
-- [https://dwm.suckless.org/patches/pertag/](https://dwm.suckless.org/patches/pertag/dwm-pertag-20200914-61bb8b2.diff)
 - [https://dwm.suckless.org/patches/save_floats/](https://dwm.suckless.org/patches/save_floats/dwm-savefloats-20181212-b69c870.diff)
 - [https://dwm.suckless.org/patches/scratchpad/](https://dwm.suckless.org/patches/scratchpad/dwm-scratchpad-6.2.diff)
 - [https://dwm.suckless.org/patches/statusallmons/](https://dwm.suckless.org/patches/statusallmons/dwm-statusallmons-6.2.diff)
