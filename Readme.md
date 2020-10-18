@@ -2,13 +2,10 @@
 
 ## Font pkg
 
-ttf-roboto-mono
-
+<!-- ttf-roboto-mono -->
+ttf-nerd-fonts-symbols-mono
 
 # Patches:
-
-
-
 
 ## DONE:
 - [https://dwm.suckless.org/patches/vanitygaps/](https://dwm.suckless.org/patches/vanitygaps/dwm-vanitygaps-20190508-6.2.diff)
