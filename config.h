@@ -41,6 +41,7 @@ static const Rule rules[] = {
 	 /* class      instance    title       tags mask     isfloating   monitor    float x,y,w,h         floatborderpx*/
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1,        50,50,500,500,        5 },
 	{ "Brave",    NULL,       NULL,       1 << 8,       0,           -1,        50,50,500,500,        5 },
+	{ "Firefox",    NULL,       NULL,       1 << 8,       0,           -1,        50,50,500,500,        5 },
 	{ "moolticute",  NULL,    NULL,       1 << 6,       1,           -1,        50,50,500,300,        3 },
         { "qjackctl",  NULL,      NULL,       1 << 6,       1,           -1,        50,50,500,300,        3 },
         { "scratchpad", NULL,     NULL,       1,            -1,          -1,        50,50,500,300,        3 },
@@ -74,6 +75,9 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char scratchpadname[] = "scratchpad";
+static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
+
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -94,20 +98,20 @@ static Key keys[] = {
 	{ MODKEY|Mod1Mask|ControlMask,  XK_l,      incrigaps,      {.i = -1 } },
 	{ MODKEY|Mod1Mask,              XK_0,      togglegaps,     {0} },
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
-	{ MODKEY,                       XK_y,      incrihgaps,     {.i = +1 } },
-	{ MODKEY,                       XK_o,      incrihgaps,     {.i = -1 } },
+	/*{ MODKEY|ShiftMask,             XK_y,      incrihgaps,     {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_o,      incrihgaps,     {.i = -1 } },
 	{ MODKEY|ControlMask,           XK_y,      incrivgaps,     {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_o,      incrivgaps,     {.i = -1 } },
 	{ MODKEY|Mod1Mask,              XK_y,      incrohgaps,     {.i = +1 } },
 	{ MODKEY|Mod1Mask,              XK_o,      incrohgaps,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_y,      incrovgaps,     {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_o,      incrovgaps,     {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_o,      incrovgaps,     {.i = -1 } },*/
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,		        XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_y,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,		        XK_f,      togglefullscr,  {0} },
@@ -127,6 +131,29 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_Escape, quit,           {0} },
+
+
+
+
+	// Programs
+	//
+	//
+	{ MODKEY|ShiftMask,             XK_Return,      spawn,          {.v = scratchpadcmd } },
+
+	{ MODKEY|ShiftMask,             XK_x,           spawn,          SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -i -nb darkred -sb red -sf white -nf gray -p \"Shutdown computer?\")\" = Yes ] && shutdown -h now") },
+	{ MODKEY|ShiftMask,             XK_Delete,      spawn,          SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -i -nb darkred -sb red -sf white -nf gray -p \"Reboot?\")\" = Yes ] && reboot") },
+        { MODKEY|ShiftMask,             XK_BackSpace,   spawn,          SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -i -nb darkred -sb red -sf white -nf gray -p \"Logout?\")\" = Yes ] && pkill -u $USER ") },
+
+        { MODKEY,		        XK_c,           spawn,          SHCMD("showclip") },
+	{ MODKEY|ShiftMask,             XK_v,           spawn,          SHCMD("killall picom || picom -b -o .9") },
+	{ MODKEY|ShiftMask,             XK_b,           spawn,          SHCMD("nitrogen ~/backgrounds --random --set-zoom-fill ") },
+	{ MODKEY,                       XK_w,           spawn,          SHCMD("firefox") },
+	{ MODKEY|ShiftMask,             XK_w,           spawn,          SHCMD("nmtui") }, /* Networkmanager TUI*/
+	{ MODKEY,                       XK_e,           spawn,          SHCMD("thunderbird") },
+	{ MODKEY,                       XK_r,           spawn,          SHCMD("st -e ranger") },
+        { MODKEY|ShiftMask,             XK_r,           spawn,          SHCMD("st -e sudo ranger") },
+
+
 };
 
 /* button definitions */
