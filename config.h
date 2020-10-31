@@ -34,10 +34,10 @@ static const Rule rules[] = {
 	 /* class      instance    title       tags mask     isfloating   monitor    float x,y,w,h         floatborderpx*/
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1,        50,50,500,500,        5 },
 	{ "Brave",    NULL,       NULL,       1 << 8,       0,           -1,        50,50,500,500,        5 },
-	{ "Firefox",    NULL,       NULL,       1 << 8,       0,           -1,        50,50,500,500,        5 },
+	{ "Firefox",    NULL,     NULL,       1 << 8,       0,           -1,        50,50,500,500,        5 },
 	{ "moolticute",  NULL,    NULL,       1 << 6,       1,           -1,        50,50,500,300,        3 },
-        { "qjackctl",  NULL,      NULL,       1 << 6,       1,           -1,        50,50,500,300,        3 },
-        { "scratchpad", NULL,     NULL,       1,            -1,          -1,        50,50,500,300,        3 },
+  	{ "qjackctl",  NULL,      NULL,       1 << 6,       1,           -1,        50,50,500,300,        3 },
+  	{ "scratchpad", NULL,     NULL,       1,            -1,          -1,        50,50,500,300,        3 },
 
 };
 
@@ -135,17 +135,17 @@ static Key keys[] = {
 
 	{ MODKEY|ShiftMask,             XK_x,           spawn,          SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -i -nb darkred -sb red -sf white -nf gray -p \"Shutdown computer?\")\" = Yes ] && shutdown -h now") },
 	{ MODKEY|ShiftMask,             XK_Delete,      spawn,          SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -i -nb darkred -sb red -sf white -nf gray -p \"Reboot?\")\" = Yes ] && reboot") },
-        { MODKEY|ShiftMask,             XK_BackSpace,   spawn,          SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -i -nb darkred -sb red -sf white -nf gray -p \"Logout?\")\" = Yes ] && pkill -u $USER ") },
+  { MODKEY|ShiftMask,             XK_BackSpace,   spawn,          SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -i -nb darkred -sb red -sf white -nf gray -p \"Logout?\")\" = Yes ] && pkill -u $USER ") },
 
-        { MODKEY,		        XK_c,           spawn,          SHCMD("showclip") },
+  { MODKEY,		        XK_c,           spawn,          SHCMD("showclip") },
 	{ MODKEY|ShiftMask,             XK_v,           spawn,          SHCMD("killall picom || picom -b -o .9") },
 	{ MODKEY|ShiftMask,             XK_b,           spawn,          SHCMD("nitrogen ~/backgrounds --random --set-zoom-fill ") },
 	{ MODKEY,                       XK_w,           spawn,          SHCMD("firefox") },
 	{ MODKEY|ShiftMask,             XK_w,           spawn,          SHCMD("nmtui") }, /* Networkmanager TUI*/
 	{ MODKEY,                       XK_e,           spawn,          SHCMD("thunderbird") },
 	{ MODKEY,                       XK_r,           spawn,          SHCMD("st -e ranger") },
-        { MODKEY|ShiftMask,             XK_r,           spawn,          SHCMD("st -e sudo ranger") },
-
+  	{ MODKEY|ShiftMask,             XK_r,           spawn,          SHCMD("st -e sudo ranger") },
+  	{ MODKEY,                       XK_F2,          spawn,          SHCMD("displaypick") },
 
 };
 
