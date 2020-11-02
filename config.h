@@ -37,7 +37,7 @@ static const Rule rules[] = {
 	{ "Firefox",    NULL,     NULL,       1 << 8,       0,           -1,        50,50,500,500,        5 },
 	{ "moolticute",  NULL,    NULL,       1 << 6,       1,           -1,        50,50,500,300,        3 },
 	{ "qjackctl",  NULL,      NULL,       1 << 6,       1,           -1,        50,50,500,300,        3 },
-	{ "scratchpad", NULL,     NULL,       1,            -1,          -1,        50,50,500,300,        3 },
+	{ "scratchpad", NULL,     NULL,       0,            1,           -1,        50,50,500,300,        3 },
 
 };
 
@@ -100,8 +100,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_y,      incrovgaps,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_o,      incrovgaps,     {.i = -1 } },*/
 	{ MODKEY,                       XK_Return, zoom,           {0} },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY,		        XK_q,      killclient,     {0} },
+	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_y,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[2]} },
@@ -137,7 +138,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Delete,      spawn,          SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -i -nb darkred -sb red -sf white -nf gray -p \"Reboot?\")\" = Yes ] && reboot") },
   { MODKEY|ShiftMask,             XK_BackSpace,   spawn,          SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -i -nb darkred -sb red -sf white -nf gray -p \"Logout?\")\" = Yes ] && pkill -u $USER ") },
 
-  { MODKEY,		        XK_c,           spawn,          SHCMD("showclip") },
+  { MODKEY,                       XK_c,           spawn,          SHCMD("showclip") },
 	{ MODKEY|ShiftMask,             XK_v,           spawn,          SHCMD("killall picom || picom -b -o .9") },
 	{ MODKEY|ShiftMask,             XK_b,           spawn,          SHCMD("nitrogen ~/wallpapers --random --set-zoom-fill ") },
 	{ MODKEY,                       XK_w,           spawn,          SHCMD("firefox") },
