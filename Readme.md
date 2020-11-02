@@ -14,11 +14,11 @@ ttf-nerd-fonts-symbols-mono
 - [https://dwm.suckless.org/patches/pertag/](https://dwm.suckless.org/patches/pertag/dwm-pertag-20200914-61bb8b2.diff)
 - [https://dwm.suckless.org/patches/alwaysfullscreen/](https://dwm.suckless.org/patches/actualfullscreen/dwm-actualfullscreen-20191112-cb3f58a.diff)
 - [https://dwm.suckless.org/patches/scratchpad/](https://dwm.suckless.org/patches/scratchpad/dwm-scratchpad-6.2.diff)
+- [https://dwm.suckless.org/patches/xresources/](https://dwm.suckless.org/patches/xresources/dwm-xresources-6.2.diff)
 
 ## NEXT:
 
-- xresources colors
-- [https://dwm.suckless.org/patches/xresources/](https://dwm.suckless.org/patches/xresources/dwm-xresources-6.2.diff)
+- [https://dwm.suckless.org/patches/barpadding/](https://dwm.suckless.org/patches/barpadding/dwm-barpadding-6.2.diff)
 
 ## TODO:
 - [https://dwm.suckless.org/patches/gaplessgrid/](https://dwm.suckless.org/patches/gaplessgrid/dwm-gaplessgrid-20160731-56a31dc.diff)
